@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113419180664",
+    "firebase_url": "https://proyectofinaldam-9372d-default-rtdb.firebaseio.com",
+    "project_id": "proyectofinaldam-9372d",
+    "storage_bucket": "proyectofinaldam-9372d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113419180664:android:32e895f11b47b2b9262b8d",
+        "android_client_info": {
+          "package_name": "com.example.proyectofinaldam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113419180664-v7jdhtccbl862hq3eum5p71ma1j56k2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3pgzBclfLwWys-cdy1b9J5EP1U1k_PX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113419180664-v7jdhtccbl862hq3eum5p71ma1j56k2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

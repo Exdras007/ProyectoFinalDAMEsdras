@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutPrincipal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1F4F3"
+    tools:context=".activity_registrarCarta">
+
+    <ImageView
+        android:id="@+id/img_subir_carta"
+        android:layout_width="163dp"
+        android:layout_height="221dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="13dp"
+        android:layout_weight="1"
+        android:onClick="subirImagen"
+        android:padding="10dp"
+        android:rotationY="-15"
+        app:layout_constraintBottom_toTopOf="@+id/edt_descCarta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/sp_colores"
+        app:srcCompat="@drawable/magiccard" />
+
+    <EditText
+        android:id="@+id/edt_descCarta"
+        android:layout_width="318dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Texto..."
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_tipoCarta" />
+
+    <EditText
+        android:id="@+id/edt_manaCarta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Mana..."
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombreCarta" />
+
+    <EditText
+        android:id="@+id/edt_Fuerza"
+        android:layout_width="123dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Fuerza..."
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_descCarta" />
+
+    <EditText
+        android:id="@+id/edt_Resistencia"
+        android:layout_width="123dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="124dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Resistencia..."
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_descCarta" />
+
+    <EditText
+        android:id="@+id/edt_precioCarta"
+        android:layout_width="163dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Precio"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_nombreCarta"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="Nombre..."
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#4A4A4A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_registro_carta" />
+
+    <ImageButton
+        android:id="@+id/btn_volver_cartas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3FC0C8"
+        android:onClick="VolverSesion"
+        android:rotationY="25"
+        android:src="@drawable/return_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_titulo_registro_carta"
+        android:layout_width="229dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="28dp"
+        android:background="#3FC0C8"
+        android:gravity="center"
+        android:rotation="4"
+        android:rotationX="8"
+        android:rotationY="17"
+        android:text="INSERTAR NUEVA CARTA"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_subirCarta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#3FC0C8"
+        android:onClick="subirCarta"
+        android:text="Subir carta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp_colores"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="32dp"
+        android:background="#3FC0C8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_manaCarta" />
+
+    <Spinner
+        android:id="@+id/sp_tipoCarta"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="32dp"
+        android:background="#3FC0C8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_colores" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

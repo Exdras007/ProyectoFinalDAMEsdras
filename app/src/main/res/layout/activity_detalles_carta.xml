@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1F4F3"
+    tools:context=".activity_detalles_carta">
+
+    <Button
+        android:id="@+id/btn_añadirCarta_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#3FC0C8"
+        android:onClick="añadirCartaWants"
+        android:text="Añadir carta a mis wants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="405dp"
+        android:layout_height="586dp"
+        android:layout_marginTop="30dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
+
+    <ImageView
+        android:id="@+id/img_carta_detalles"
+        android:layout_width="186dp"
+        android:layout_height="259dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="112dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:rotationY="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles"
+        app:srcCompat="@drawable/magiccard" />
+
+    <TextView
+        android:id="@+id/txt_titulo_carta_detalles"
+        android:layout_width="206dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="40dp"
+        android:background="#3FC0C8"
+        android:gravity="center"
+        android:rotation="4"
+        android:rotationX="8"
+        android:rotationY="17"
+        android:text="Nombre Carta Extra Largo XDXD"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_img_volver_inicio_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#0094AE"
+        android:onClick="VolverInicio"
+        android:rotationY="25"
+        android:src="@drawable/return_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_textoCarta_detalles"
+        android:layout_width="329dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="16dp"
+        android:background="#80FFFFFF"
+        android:padding="10dp"
+        android:text="Texto descriptivo"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_carta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_fuerza_resistencia_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#80FFFFFF"
+        android:padding="5dp"
+        android:text="20/20"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_textoCarta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_color_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#80FFFFFF"
+        android:padding="5dp"
+        android:text="Multicolor"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/txt_tipoCarta_detalles"
+        app:layout_constraintStart_toEndOf="@+id/txt_fuerza_resistencia_detalles"
+        app:layout_constraintTop_toBottomOf="@+id/txt_textoCarta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_precioCarta_detalles"
+        android:layout_width="88dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="48dp"
+        android:background="#80FFFFFF"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="15000 €"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_manaCarta_detalles"
+        android:layout_width="50dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:background="#80FFFFFF"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="999"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_tituloManaCarta_detalles"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_tituloManaCarta_detalles"
+        android:layout_width="50dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
+        android:background="#80FFFFFF"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Mana:"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
+
+    <TextView
+        android:id="@+id/txt_tipoCarta_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:background="#80FFFFFF"
+        android:padding="5dp"
+        android:text="Tipo de carta que es"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_textoCarta_detalles" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
