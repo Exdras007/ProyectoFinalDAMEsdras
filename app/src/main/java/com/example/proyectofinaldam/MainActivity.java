@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.proyectofinaldam.Clases.Carta;
 import com.example.proyectofinaldam.RecyclerView.ListaCartasAdapter;
@@ -68,12 +69,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // -----------------------------------------------
-        btn_inicioSesion = (Button) findViewById(R.id.btn_inicioSesion);
         rv_cartas = (RecyclerView) findViewById(R.id.rv_cartas);
         sp_filtros_colores = (Spinner) findViewById(R.id.sp_filtroColor);
         sp_filtros_tipo = (Spinner) findViewById(R.id.sp_filtroTipo);
         edt_BuscarCartas = (EditText) findViewById(R.id.edt_buscarCarta);
 
+        btn_inicioSesion = (Button) findViewById(R.id.btn_inicioSesion);
         btn_buscarCarta = (ImageButton) findViewById(R.id.img_buscarCartaFiltro);
         btn_abrirBuscar = (ImageButton) findViewById(R.id.img_abrirBuscar);
         btn_cerrarBuscar = (ImageButton) findViewById(R.id.img_cerrarBuscar);
@@ -281,7 +282,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void cerrarBuscar(View view)
     {
         sp_filtros_colores.setVisibility(View.VISIBLE);
+        sp_filtros_colores.setSelection(0);
         sp_filtros_tipo.setVisibility(View.VISIBLE);
+        sp_filtros_tipo.setSelection(0);
         edt_BuscarCartas.setVisibility(View.INVISIBLE);
         btn_cerrarBuscar.setVisibility(View.INVISIBLE);
         btn_abrirBuscar.setVisibility(View.VISIBLE);

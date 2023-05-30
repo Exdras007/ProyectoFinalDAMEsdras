@@ -63,8 +63,6 @@ public class activity_inicio_sesion extends AppCompatActivity
             txt_tituloClave.setVisibility(View.INVISIBLE);
             edt_emailUsuario.setVisibility(View.INVISIBLE);
             edt_claveUsuario.setVisibility(View.INVISIBLE);
-            img_usuario.setVisibility(View.VISIBLE);
-
             // Toast.makeText(activity_inicio_sesion.this, admin, Toast.LENGTH_SHORT).show();
         }
     }
@@ -87,7 +85,6 @@ public class activity_inicio_sesion extends AppCompatActivity
         btn_RegistroUsuario = (Button) findViewById(R.id.btn_registrarse);
         txt_tituloEmail = (TextView) findViewById(R.id.titulo_correo);
         txt_tituloClave = (TextView) findViewById(R.id.titulo_clave);
-        img_usuario = (ImageView) findViewById(R.id.img_usuario);
         // --- Fire Base ---
         mAuth = FirebaseAuth.getInstance();
         // Pruebas firebase realTime

@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="right"
             android:orientation="vertical">
 
             <TextView
@@ -50,11 +51,23 @@
             <TextView
                 android:id="@+id/txt_descripcionCartaItem"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:background="#00FEFEFE"
                 android:gravity="center"
                 android:padding="10dp"
                 android:shadowColor="#000000"
                 android:text="Texto descriptivo de alguna carta de Magic que seguramente este rota por que claro, las cosas ya no son como antes que era todo mucho mas sencillo"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txt_precioCartaItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#9EDEE2"
+                android:padding="10dp"
+                android:shadowColor="#000000"
+                android:text="€€€"
                 android:textColor="#000000"
                 android:textSize="10sp" />
 

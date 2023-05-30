@@ -75,6 +75,7 @@ public class ListaCartasAdapter extends RecyclerView.Adapter<CartaViewHolder>
     {
         Carta c = this.getCartas().get(position);
         holder.getTxt_item_NombreCarta().setText(c.getNombre());
+        holder.getTxt_item_PrecioCarta().setText(String.valueOf(c.getPrecio()) + " €");
         if(c.getTexto().equalsIgnoreCase("null"))
         {
             holder.getTxt_item_TextoCarta().setText("");

@@ -7,6 +7,20 @@
     android:background="#D1F4F3"
     tools:context=".activity_wants">
 
+    <Button
+        android:id="@+id/btn_comprar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#3FC0C8"
+        android:onClick="ComprarLista"
+        android:padding="5dp"
+        android:text="Comprar"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/txt_titulo_mis_wants"
         android:layout_width="wrap_content"
@@ -72,5 +86,27 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_sinergia_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="50 %"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_titulo_sinergia" />
+
+    <TextView
+        android:id="@+id/txt_titulo_sinergia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="12dp"
+        android:text="Sinergia:"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_precio_total" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

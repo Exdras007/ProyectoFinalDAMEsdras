@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +24,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.ktx.Firebase;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -36,12 +34,12 @@ public class activity_wants extends AppCompatActivity
     private String Usuario = "NADA?";
     private double precio = 0.0;
     private TextView txt_precio;
+    private Button btn_comprar;
 
     // --------------------------------
 
     private RecyclerView rv_cartasWants = null;
     private ArrayList<Carta> cartas_wants;
-    private ArrayList<String> nombreCartasWants;
     private ListaCartasAdapter adaptadorCartasWants = null;
     private DatabaseReference myRefCartas = null;
 
@@ -55,7 +53,6 @@ public class activity_wants extends AppCompatActivity
         String [] textoEmail = texto.split("@");
         Usuario = textoEmail[0];
         Usuario.toLowerCase();
-        // Toast.makeText(activity_wants.this, "Aqui tus cartas " + Usuario.toUpperCase(), Toast.LENGTH_SHORT).show();
 
         // ---
 
@@ -65,7 +62,7 @@ public class activity_wants extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot snapshot)
             {
-                RecogerCartasWants(snapshot);
+                RecogerNombreCartasWants(snapshot);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error)
@@ -74,7 +71,9 @@ public class activity_wants extends AppCompatActivity
                 Log.i( "Fallo", String.valueOf(error.toException()));
             }
         });
+
         // --------------
+
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE)
         {
@@ -96,42 +95,14 @@ public class activity_wants extends AppCompatActivity
         // --------------------------
         rv_cartasWants = (RecyclerView) findViewById(R.id.rv_cartasWants);
         txt_precio = (TextView) findViewById(R.id.txt_precio_total);
+        btn_comprar = (Button) findViewById(R.id.btn_comprar);
         // ---
         mAuth = FirebaseAuth.getInstance();
         cartas_wants = new ArrayList<Carta>();
-        nombreCartasWants = new ArrayList<String>();
+        //nombreCartasWants = new ArrayList<String>();
         // ---
         adaptadorCartasWants = new ListaCartasAdapter(this,cartas_wants);
         rv_cartasWants.setAdapter(adaptadorCartasWants);
-    }
-
-    private void RecogerCartasWants(DataSnapshot snapshot)
-    {
-        adaptadorCartasWants = new ListaCartasAdapter(this,cartas_wants);
-        rv_cartasWants.setAdapter(adaptadorCartasWants);
-        myRefCartas = FirebaseDatabase.getInstance().getReference("Cartas");
-        myRefCartas.addValueEventListener(new ValueEventListener()
-        {
-            @Override
-            public void onDataChange(DataSnapshot snapshot)
-            {
-                adaptadorCartasWants.getCartas().clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren())
-                {
-                    Carta c = (Carta) dataSnapshot.getValue(Carta.class);
-                    cartas_wants.add(c);
-                    adaptadorCartasWants.setCartas(cartas_wants);
-                    adaptadorCartasWants.notifyDataSetChanged();
-                }
-                // RecogerCartas(snapshot);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error)
-            {
-                // Fallo al leer valores
-                Log.i( "Fallo", String.valueOf(error.toException()));
-            }
-        });
     }
 
     private void RecogerNombreCartasWants(DataSnapshot snapshot)
@@ -149,9 +120,11 @@ public class activity_wants extends AppCompatActivity
                 {
                     Carta c = (Carta) dataSnapshot.getValue(Carta.class);
                     cartas_wants.add(c);
+                    precio = precio + c.getPrecio();
                     adaptadorCartasWants.setCartas(cartas_wants);
                     adaptadorCartasWants.notifyDataSetChanged();
                 }
+                txt_precio.setText(String.valueOf(precio) + " €");
                 // RecogerCartas(snapshot);
             }
             @Override
@@ -168,5 +141,42 @@ public class activity_wants extends AppCompatActivity
         Intent intent = new Intent(activity_wants.this, activity_inicio_sesion.class);
         startActivity(intent);
     }
+
+    public void ComprarLista(View view)
+    {
+        Toast.makeText(activity_wants.this, "Vamos a redirigirte a las formas de pago...", Toast.LENGTH_SHORT).show();
+    }
+
+    /*
+    private void RecogerCartasWants(DataSnapshot snapshot)
+    {
+        adaptadorCartasWants = new ListaCartasAdapter(this,cartas_wants);
+        rv_cartasWants.setAdapter(adaptadorCartasWants);
+        myRefCartas = FirebaseDatabase.getInstance().getReference("Cartas");
+        myRefCartas.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot snapshot)
+            {
+                adaptadorCartasWants.getCartas().clear();
+                for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    Carta c = (Carta) dataSnapshot.getValue(Carta.class);
+                    cartas_wants.add(c);
+                    adaptadorCartasWants.setCartas(cartas_wants);
+                    adaptadorCartasWants.notifyDataSetChanged();
+                    precio = precio + c.getPrecio();
+                }
+                // RecogerCartas(snapshot);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+                // Fallo al leer valores
+                Log.i( "Fallo", String.valueOf(error.toException()));
+            }
+        });
+    }
+    */
 
 }

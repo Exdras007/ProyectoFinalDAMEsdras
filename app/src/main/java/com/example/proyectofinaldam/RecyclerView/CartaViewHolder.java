@@ -24,6 +24,7 @@ public class CartaViewHolder extends RecyclerView.ViewHolder implements View.OnC
     // --------
     private TextView txt_item_NombreCarta;
     private TextView txt_item_TextoCarta;
+    private TextView txt_item_PrecioCarta;
     private ImageView img_item_carta;
     // ---
     private ListaCartasAdapter lca;
@@ -34,10 +35,19 @@ public class CartaViewHolder extends RecyclerView.ViewHolder implements View.OnC
         super(itemView);
         txt_item_NombreCarta = (TextView) itemView.findViewById(R.id.txt_nombreCartaItem);
         txt_item_TextoCarta = (TextView) itemView.findViewById(R.id.txt_descripcionCartaItem);
+        txt_item_PrecioCarta = (TextView) itemView.findViewById(R.id.txt_precioCartaItem);
         img_item_carta = (ImageView) itemView.findViewById(R.id.img_cartaItem);
         // ----------------
         lca = listaCartasAdapter;
         itemView.setOnClickListener(this);
+    }
+
+    public TextView getTxt_item_PrecioCarta() {
+        return txt_item_PrecioCarta;
+    }
+
+    public void setTxt_item_PrecioCarta(TextView txt_item_PrecioCarta) {
+        this.txt_item_PrecioCarta = txt_item_PrecioCarta;
     }
 
     public ImageView getImg_item_carta() {

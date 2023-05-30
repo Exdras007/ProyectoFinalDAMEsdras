@@ -115,6 +115,7 @@ public class activity_detalles_carta extends AppCompatActivity
         Intent intent = new Intent(activity_detalles_carta.this, MainActivity.class);
         startActivity(intent);
     }
+
     public void añadirCartaWants(View view)
     {
         currentUser = mAuth.getCurrentUser();
@@ -133,7 +134,7 @@ public class activity_detalles_carta extends AppCompatActivity
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
 
-        myRef.child("wants_" + Nombre).child(c.getNombre()).setValue(c.getNombre());
+        myRef.child("wants_" + Nombre).child(c.getNombre()).setValue(c);
 
         Toast.makeText(activity_detalles_carta.this, "Carta añadida correctamente", Toast.LENGTH_SHORT).show();
     }

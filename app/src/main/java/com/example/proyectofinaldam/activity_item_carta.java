@@ -15,7 +15,7 @@ public class activity_item_carta extends AppCompatActivity implements Serializab
 {
     private TextView NombreCarta;
     private TextView TextoCarta;
-
+    private TextView PrecioCarta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +25,7 @@ public class activity_item_carta extends AppCompatActivity implements Serializab
         // -------------------------
         NombreCarta = (TextView) findViewById(R.id.txt_nombreCartaItem);
         TextoCarta = (TextView) findViewById(R.id.txt_descripcionCartaItem);
+        PrecioCarta = (TextView) findViewById(R.id.txt_precioCartaItem);
         // ----------
         Intent intent = getIntent();
     }
