@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class activity_inicio_sesion extends AppCompatActivity
@@ -35,7 +34,7 @@ public class activity_inicio_sesion extends AppCompatActivity
     private Button btn_Mazos;
     private Button btn_IniciarSesion;
     private Button btn_RegistroUsuario;
-    private ImageView img_usuario;
+    private ImageView img_fondo_sesion;
 
     // --------------------------------------------
 
@@ -55,6 +54,7 @@ public class activity_inicio_sesion extends AppCompatActivity
                 btn_CrearCarta.setVisibility(View.VISIBLE);
                 btn_Mazos.setVisibility(View.INVISIBLE);
             }
+            img_fondo_sesion.setVisibility(View.VISIBLE);
             btn_CerrarSesion.setVisibility(View.VISIBLE);
             btn_IniciarSesion.setVisibility(View.INVISIBLE);
             btn_RegistroUsuario.setVisibility(View.INVISIBLE);
@@ -63,7 +63,6 @@ public class activity_inicio_sesion extends AppCompatActivity
             txt_tituloClave.setVisibility(View.INVISIBLE);
             edt_emailUsuario.setVisibility(View.INVISIBLE);
             edt_claveUsuario.setVisibility(View.INVISIBLE);
-            // Toast.makeText(activity_inicio_sesion.this, admin, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -85,11 +84,11 @@ public class activity_inicio_sesion extends AppCompatActivity
         btn_RegistroUsuario = (Button) findViewById(R.id.btn_registrarse);
         txt_tituloEmail = (TextView) findViewById(R.id.titulo_correo);
         txt_tituloClave = (TextView) findViewById(R.id.titulo_clave);
+        img_fondo_sesion = (ImageView) findViewById(R.id.img_fondo_sesion);
         // --- Fire Base ---
         mAuth = FirebaseAuth.getInstance();
         // Pruebas firebase realTime
         database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
     }
     public void registrarUsuario(View view)
     {

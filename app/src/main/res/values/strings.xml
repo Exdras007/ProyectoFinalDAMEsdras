@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">ProyectoFinalDAM</string>
+    <string name="app_name" translatable="false">ProyectoFinalDAM</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="btn_iniciar_sesion">Iniciar sesion</string>
+    <string name="btn_registrarse">Registrarse</string>
+    <string name="txt_nombre">Nombre</string>
+    <string name="txt_clave">Clave</string>
+    <string name="Clave...">Clave...</string>
 </resources>

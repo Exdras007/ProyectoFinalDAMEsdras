@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.proyectofinaldam.Clases.Carta;
 import com.example.proyectofinaldam.RecyclerView.ListaCartasAdapter;
@@ -101,6 +100,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         sp_filtros_tipo.setOnItemSelectedListener(this);
         sp_filtros_tipo.setSelection(0);
         // --------
+        ConstructorRecogerCartas();
+        // --------------
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            // In landscape
+            rv_cartas.setLayoutManager(new GridLayoutManager(this,2));
+        }
+        else
+        {
+            // In portrait
+            rv_cartas.setLayoutManager(new LinearLayoutManager(this));
+        }
+    }
+
+    private void ConstructorRecogerCartas()
+    {
         adaptadorCartas = new ListaCartasAdapter(this,cartas);
         rv_cartas.setAdapter(adaptadorCartas);
         myRefCartas = FirebaseDatabase.getInstance().getReference("Cartas");
@@ -118,18 +134,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Log.i( "Fallo", String.valueOf(error.toException()));
             }
         });
-        // --------------
-        int orientation = getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE)
-        {
-            // In landscape
-            rv_cartas.setLayoutManager(new GridLayoutManager(this,2));
-        }
-        else
-        {
-            // In portrait
-            rv_cartas.setLayoutManager(new LinearLayoutManager(this));
-        }
     }
 
     private void RecogerCartas(DataSnapshot snapshot)
@@ -290,23 +294,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btn_abrirBuscar.setVisibility(View.VISIBLE);
         btn_buscarCarta.setVisibility(View.INVISIBLE);
         // ---
-        adaptadorCartas = new ListaCartasAdapter(this,cartas);
-        rv_cartas.setAdapter(adaptadorCartas);
-        myRefCartas = FirebaseDatabase.getInstance().getReference("Cartas");
-        myRefCartas.addValueEventListener(new ValueEventListener()
-        {
-            @Override
-            public void onDataChange(DataSnapshot snapshot)
-            {
-                RecogerCartas(snapshot);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error)
-            {
-                // Fallo al leer valores
-                Log.i( "Fallo", String.valueOf(error.toException()));
-            }
-        });
+        ConstructorRecogerCartas();
     }
 
     public void buscarCartaFiltro(View view)
@@ -329,7 +317,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 for(DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
                     Carta c = (Carta) dataSnapshot.getValue(Carta.class);
-                    if (c.getNombre().equalsIgnoreCase(nombreCartaBuscar))
+                    String NombreCartaActual = c.getNombre();
+                    NombreCartaActual.trim().toLowerCase();
+                    nombreCartaBuscar.trim().toLowerCase();
+                    if (NombreCartaActual.equalsIgnoreCase(nombreCartaBuscar))
                     {
                     cartas.add(c);
                     adaptadorCartas.setCartas(cartas);

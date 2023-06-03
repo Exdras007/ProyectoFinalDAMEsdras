@@ -17,14 +17,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class ListaCartasAdapter extends RecyclerView.Adapter<CartaViewHolder>
+public class ListaCartasAdapterWants extends RecyclerView.Adapter<CartaViewHolderWants>
 {
     private Context contexto = null;
     private ArrayList<Carta> cartas = null;
     private LayoutInflater inflate = null;
     private FirebaseAuth mAuth;
 
-    public ListaCartasAdapter(Context contexto, ArrayList<Carta> cartas) {
+    public ListaCartasAdapterWants(Context contexto, ArrayList<Carta> cartas) {
         this.contexto = contexto;
         this.cartas = cartas;
         this.inflate = LayoutInflater.from(this.contexto);
@@ -64,15 +64,15 @@ public class ListaCartasAdapter extends RecyclerView.Adapter<CartaViewHolder>
 
     @NonNull
     @Override
-    public CartaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public CartaViewHolderWants onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View mItemView = inflate.inflate(R.layout.activity_item_carta,parent,false);
-        CartaViewHolder cvh = new CartaViewHolder(mItemView, this);
+        CartaViewHolderWants cvh = new CartaViewHolderWants(mItemView, this);
         return cvh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartaViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull CartaViewHolderWants holder, int position)
     {
         Carta c = this.getCartas().get(position);
         holder.getTxt_item_NombreCarta().setText(c.getNombre());

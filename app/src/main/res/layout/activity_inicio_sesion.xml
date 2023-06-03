@@ -16,7 +16,7 @@
         android:backgroundTint="#000000"
         android:ems="10"
         android:hint="Clave..."
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="#000000"
         android:textColorHint="#4A4A4A"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:layout_marginTop="60dp"
         android:backgroundTint="#000000"
         android:gravity="center"
-        android:text="Clave"
+        android:text="@string/txt_clave"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
         android:layout_height="99dp"
         android:layout_marginTop="76dp"
         android:gravity="bottom|center_horizontal"
-        android:text="Nombre"
+        android:text="@string/txt_nombre"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#3FC0C8"
         android:onClick="loguearUsuario"
-        android:text="Iniciar sesion"
+        android:text="@string/btn_iniciar_sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -118,7 +118,7 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#3FC0C8"
         android:onClick="registrarUsuario"
-        android:text="Registrarse"
+        android:text="@string/btn_registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -166,5 +166,16 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_fondo_sesion"
+        android:layout_width="327dp"
+        android:layout_height="489dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_03" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

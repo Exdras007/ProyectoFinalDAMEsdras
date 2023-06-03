@@ -10,6 +10,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class activity_item_carta extends AppCompatActivity implements Serializable
 {

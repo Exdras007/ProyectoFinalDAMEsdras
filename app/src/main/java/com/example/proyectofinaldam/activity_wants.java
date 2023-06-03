@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.proyectofinaldam.Clases.Carta;
 import com.example.proyectofinaldam.RecyclerView.ListaCartasAdapter;
+import com.example.proyectofinaldam.RecyclerView.ListaCartasAdapterWants;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 
 public class activity_wants extends AppCompatActivity
 {
+    public static int Peticion_1 = 1;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private String Usuario = "NADA?";
@@ -40,7 +42,7 @@ public class activity_wants extends AppCompatActivity
 
     private RecyclerView rv_cartasWants = null;
     private ArrayList<Carta> cartas_wants;
-    private ListaCartasAdapter adaptadorCartasWants = null;
+    private ListaCartasAdapterWants adaptadorCartasWants = null;
     private DatabaseReference myRefCartas = null;
 
     @Override
@@ -101,13 +103,13 @@ public class activity_wants extends AppCompatActivity
         cartas_wants = new ArrayList<Carta>();
         //nombreCartasWants = new ArrayList<String>();
         // ---
-        adaptadorCartasWants = new ListaCartasAdapter(this,cartas_wants);
+        adaptadorCartasWants = new ListaCartasAdapterWants(this,cartas_wants);
         rv_cartasWants.setAdapter(adaptadorCartasWants);
     }
 
     private void RecogerNombreCartasWants(DataSnapshot snapshot)
     {
-        adaptadorCartasWants = new ListaCartasAdapter(this,cartas_wants);
+        adaptadorCartasWants = new ListaCartasAdapterWants(this,cartas_wants);
         rv_cartasWants.setAdapter(adaptadorCartasWants);
         myRefCartas = FirebaseDatabase.getInstance().getReference("wants_" + Usuario);
         myRefCartas.addValueEventListener(new ValueEventListener()
