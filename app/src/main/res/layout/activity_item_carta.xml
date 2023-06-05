@@ -22,7 +22,7 @@
 
         <ImageView
             android:id="@+id/img_cartaItem"
-            android:layout_width="380dp"
+            android:layout_width="333dp"
             android:layout_height="190dp"
             android:layout_weight="1"
             android:padding="10dp"
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:background="#00FEFEFE"
-                android:gravity="center"
+                android:gravity="center|left"
                 android:padding="10dp"
                 android:shadowColor="#000000"
                 android:text="Texto descriptivo de alguna carta de Magic que seguramente este rota por que claro, las cosas ya no son como antes que era todo mucho mas sencillo"

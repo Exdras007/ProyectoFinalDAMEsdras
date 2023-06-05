@@ -3,6 +3,7 @@ package com.example.proyectofinaldam;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -63,7 +64,7 @@ public class activity_detalles_carta extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_carta);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // ---
 
         nombreCarta = (TextView) findViewById(R.id.txt_titulo_carta_detalles);

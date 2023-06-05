@@ -5,5 +5,10 @@
     <string name="btn_registrarse">Registrarse</string>
     <string name="txt_nombre">Nombre</string>
     <string name="txt_clave">Clave</string>
+    <string name="Nombre...">Nombre...</string>
     <string name="Clave...">Clave...</string>
+    <string name="btn_cerrar_sesion...">Cerrar sesion</string>
+    <string name="btn_crearCarta">Crear carta</string>
+    <string name="btn_wants">Mis wants...</string>
+
 </resources>

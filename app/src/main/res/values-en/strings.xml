@@ -6,4 +6,8 @@
     <string name="txt_nombre">Name</string>
     <string name="txt_clave">Password</string>
     <string name="Clave...">Password...</string>
+    <string name="Nombre...">Name...</string>
+    <string name="btn_cerrar_sesion...">Sign out</string>
+    <string name="btn_crearCarta">Create card</string>
+    <string name="btn_wants">My wants...</string>
 </resources>

@@ -7,6 +7,17 @@
     android:background="#D1F4F3"
     tools:context=".activity_detalles_carta">
 
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="405dp"
+        android:layout_height="586dp"
+        android:layout_marginTop="30dp"
+        android:background="#253FBFC7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
+
     <Button
         android:id="@+id/btn_añadirCarta_detalles"
         android:layout_width="wrap_content"
@@ -20,25 +31,15 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/img_fondo"
-        android:layout_width="405dp"
-        android:layout_height="586dp"
-        android:layout_marginTop="30dp"
-        android:background="#253FBFC7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles" />
-
-    <ImageView
         android:id="@+id/img_carta_detalles"
         android:layout_width="186dp"
         android:layout_height="259dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="112dp"
         android:layout_weight="1"
         android:padding="10dp"
         android:rotationY="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_titulo_carta_detalles"
         app:srcCompat="@drawable/magiccard" />
