@@ -37,6 +37,7 @@ public class activity_registrarCarta extends AppCompatActivity implements Adapte
     private String ColorSeleccionado;
     private String TipoSeleccionado;
     private ImageView img_add_card;
+    private String Mana;
 
     public static final int NUEVA_IMAGEN = 1;
     Uri imagen_seleccionada = null;
@@ -95,7 +96,15 @@ public class activity_registrarCarta extends AppCompatActivity implements Adapte
     public void subirCarta(View view)
     {
         String NombreCarta = String.valueOf(edt_nombre_carta.getText());
-        Integer ManaCarta = Integer.valueOf(String.valueOf(edt_manaCarta.getText()));
+        if (String.valueOf(edt_manaCarta.getText()).equalsIgnoreCase(null) || String.valueOf(edt_manaCarta.getText()).equalsIgnoreCase(""))
+        {
+            Mana = "0";
+        }
+        else
+        {
+            Mana = String.valueOf(edt_manaCarta.getText());
+        }
+        Integer ManaCarta = Integer.valueOf(Mana);
         String TextoCarta = String.valueOf(edt_Texto.getText());
         String ColorCarta = String.valueOf(sp_Colores.getSelectedItem());
         String TipoCarta = String.valueOf(sp_tipoCarta.getSelectedItem());
@@ -142,11 +151,17 @@ public class activity_registrarCarta extends AppCompatActivity implements Adapte
         {
             edt_Fuerza.setVisibility(View.INVISIBLE);
             edt_Resistencia.setVisibility(View.INVISIBLE);
+            edt_manaCarta.setVisibility(View.VISIBLE);
+            if (TipoSeleccionado.equalsIgnoreCase("Tierra"))
+            {
+                edt_manaCarta.setVisibility(View.INVISIBLE);
+            }
         }
         else
         {
             edt_Fuerza.setVisibility(View.VISIBLE);
             edt_Resistencia.setVisibility(View.VISIBLE);
+            edt_manaCarta.setVisibility(View.VISIBLE);
         }
     }
 

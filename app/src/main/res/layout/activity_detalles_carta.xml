@@ -30,6 +30,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/btn_borrarCarta_detalles"
+        android:layout_width="123dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#3FC0C8"
+        android:onClick="borrarCarta"
+        android:text="Quitar carta"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_añadirCarta_detalles"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fuerza_resistencia_detalles"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/img_carta_detalles"
         android:layout_width="186dp"

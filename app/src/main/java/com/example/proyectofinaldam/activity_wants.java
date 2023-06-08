@@ -40,7 +40,6 @@ public class activity_wants extends AppCompatActivity
     private Button btn_comprar;
 
     // --------------------------------
-
     private RecyclerView rv_cartasWants = null;
     private ArrayList<Carta> cartas_wants;
     private ListaCartasAdapterWants adaptadorCartasWants = null;
